@@ -1,4 +1,4 @@
-# 📊 Financial Valuation & Risk Monitoring Dashboard
+# Financial Valuation & Risk Monitoring Dashboard
 
 <div align="center">
 
@@ -14,23 +14,23 @@
 
 ---
 
-## 🏦 Overview
+## Overview
 
 This application simulates an enterprise-grade **daily valuation control and reconciliation workflow** used by financial institutions to verify recorded portfolio valuations against independent market reference price feeds. It features automated exception detection, exception lifecycle management (`Open`, `Under Review`, `Resolved`), SQLite audit trail persistence, position matching, stale price detection, and an interactive 4-tab Streamlit dashboard.
 
-> ⚠️ **Disclaimer:** This application uses **synthetic data only** and does not provide real regulatory compliance certification or investment advice. It is designed for educational and portfolio demonstration purposes.
+>  **Disclaimer:** This application uses **synthetic data only** and does not provide real regulatory compliance certification or investment advice. It is designed for educational and portfolio demonstration purposes.
 
 ---
 
-## ✨ Core Modules & Key Features
+## Core Modules & Key Features
 
-### 1. 🚨 Exception Management Workflow
+### 1. Exception Management Workflow
 - **Unique Exception Identifiers:** Every detected discrepancy receives a unique, stable `exception_id` (e.g. `EXC-POS-00001-MP`).
 - **Analyst Workflow Lifecycle:** Supports state transitions between **`Open`**, **`Under Review`**, and **`Resolved`**.
 - **Analyst Investigation Notes:** Analysts can append timestamped root cause notes and override audit logs.
 - **Timestamps:** Tracks creation (`created_at`), update (`updated_at`), and resolution (`resolved_at`) timestamps.
 
-### 2. 🔄 Automated Position & Reference Reconciliation
+### 2. Automated Position & Reference Reconciliation
 - **Dual Dataset Matching:** Accepts separate Internal Position files (CSV/Excel) and Market Reference Price feeds.
 - **Record Matching:** Joins records by `instrument_id` and `valuation_date`.
 - **Discrepancy Detection:**
@@ -40,24 +40,24 @@ This application simulates an enterprise-grade **daily valuation control and rec
   - **Price Valuation Mismatches:** Percentage variance exceeds warning/high/critical limits.
 - **Downloadable Excel Reconciliation Report:** Generates a multi-sheet Excel workbook with Executive Summary, Matched Positions, Discrepancies, and Unmatched items.
 
-### 3. 📜 Immutable SQLite Audit Trail
+### 3. Immutable SQLite Audit Trail
 - **Persistent Storage:** SQLite database (`data/audit_trail.db`) preserves exception states, notes, and history across file uploads or dashboard restarts.
 - **Audit Logs:** Log every creation event, status change (`Open` ➔ `Under Review` ➔ `Resolved`), and note addition with analyst IDs and timestamps.
 - **Downloadable Audit Trail:** Export complete audit logs to CSV for regulatory compliance documentation.
 
-### 4. 📊 4-Tab Interactive Streamlit Interface
+### 4. 4-Tab Interactive Streamlit Interface
 - **Tab 1: Portfolio Valuation Dashboard:** Portfolio KPIs, composition donut chart, asset deviation bar chart, deviation scatter plot, counterparty exposure, AI summary.
 - **Tab 2: Automated Reconciliation Engine:** Upload internal & market price files, run automated matching, view reconciliation KPIs, inspect unmatched/stale tables, export Excel report.
 - **Tab 3: Exception Workflow Management:** Interactive workflow dashboard, status & severity filters, single & bulk status update forms, analyst note editor.
 - **Tab 4: Audit Trail & History:** View chronological SQLite audit events, filter by action or analyst, export audit log.
 
-### 5. 🤖 AI-Powered Summary (Optional)
+### 5. AI-Powered Summary (Optional)
 - Natural-language exception summaries using OpenAI GPT-4.
 - Deterministic rule-based template fallback when AI is disabled or unavailable.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 financial-valuation-dashboard/
@@ -90,7 +90,7 @@ financial-valuation-dashboard/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Python 3.9 or higher
@@ -130,7 +130,7 @@ pytest tests/ -v
 
 ---
 
-## 🧪 Test Suite Summary
+## Test Suite Summary
 
 The application includes 61 automated unit tests passing at 100%:
 
@@ -143,7 +143,7 @@ The application includes 61 automated unit tests passing at 100%:
 
 ---
 
-## 📋 Enterprise Financial Control Workflow
+## Enterprise Financial Control Workflow
 
 ```
 1. DATA INTAKE           → Load internal positions & market reference price feeds
@@ -157,7 +157,7 @@ The application includes 61 automated unit tests passing at 100%:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology | Purpose |
 |-----------|-----------|---------|
@@ -172,6 +172,6 @@ The application includes 61 automated unit tests passing at 100%:
 
 ---
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
